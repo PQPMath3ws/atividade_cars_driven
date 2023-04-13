@@ -1,5 +1,6 @@
 import { Router } from "express";
-import carsRouter from "./carsRouter.js";
+
+import carsRouter from "./carsRouter";
 
 const router = Router();
 

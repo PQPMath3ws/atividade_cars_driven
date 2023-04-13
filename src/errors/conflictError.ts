@@ -1,6 +1,6 @@
 export default function conflictError(message: string) {
-  return {
-    name: "ConflictError",
-    message: message
-  }
+	return {
+		name: "ConflictError",
+		message: message
+	}
 }
