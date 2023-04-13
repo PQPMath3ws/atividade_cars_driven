@@ -6,7 +6,7 @@ import carService from "../services/carService";
 async function getAllCars(req: Request, res: Response) {
 	try {
 		const cars = await carService.getCars();
-		res.send(cars);
+		res.send(JSON.stringify(cars, (key:string, value:any) => (typeof value === "bigint" ? value.toString() : value)));
 	} catch (e) {
 		console.log(e);
 		return res.sendStatus(httpStatus.INTERNAL_SERVER_ERROR);
@@ -17,7 +17,7 @@ async function getSpecificCar(req: Request, res: Response) {
 	const carId = parseInt(req.params.carId);
 	try {
 		const car = await carService.getCar(carId);
-		res.send(car);
+		res.send(JSON.stringify(car, (key: string, value: any) => (typeof value === "bigint" ? value.toString() : value)));
 	} catch (e) {
 		if (e.name === "NotFoundError") {
 			return res.sendStatus(httpStatus.NOT_FOUND);
