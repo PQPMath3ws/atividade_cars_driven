@@ -1,0 +1,20 @@
+{
+    "name": "Atividade Cars Driven",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "cars-app",
+    "workspaceFolder": "/workspace",
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.profiles.linux": {
+                    "zsh": {
+                        "path": "/usr/bin/zsh"
+                    }
+                },
+                "terminal.integrated.defaultProfile.linux": "zsh"
+            }
+        }
+    },
+    "remoteUser": "root",
+	"containerUser": "root"
+}
