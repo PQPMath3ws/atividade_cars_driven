@@ -2,28 +2,47 @@
   "name": "cars",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "type": "module",
+  "main": "src/index.js",
   "scripts": {
-    "dev": "nodemon src/index.ts"
+    "start": "node ./src/index.ts",
+    "dev": "NODE_ENV=development nodemon --watch 'src/' --exec 'ts-node ./src/index.ts' -e ts",
+    "prisma-migration": "prisma migrate dev",
+    "prisma-seed": "prisma db seed"
   },
-  "keywords": [],
-  "author": "",
+  "prisma": {
+    "seed": "npx ts-node ./prisma/seed.ts"
+  },
+  "keywords": [
+    "node",
+    "nodejs",
+    "typescript",
+    "postgres",
+    "postgresql",
+    "backend",
+    "back-end",
+    "express",
+    "api",
+    "discord",
+    "prisma"
+  ],
+  "author": "PQPMath3ws && ThiCode",
   "license": "ISC",
   "dependencies": {
+    "@prisma/client": "^4.12.0",
+    "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "express-async-errors": "^3.1.1",
-    "http-status": "^1.6.2",
-    "joi": "^17.7.0",
-    "pg": "^8.8.0"
+    "http-status": "1.6.2",
+    "joi": "^17.9.1"
   },
   "devDependencies": {
-    "@types/express": "^4.17.16",
-    "@types/node": "^18.11.18",
-    "@types/pg": "^8.6.6",
-    "nodemon": "^2.0.20",
+    "@types/cors": "^2.8.13",
+    "@types/express": "^4.17.17",
+    "@types/node": "^18.15.11",
+    "nodemon": "^2.0.22",
+    "prisma": "^4.12.0",
     "ts-node": "^10.9.1",
-    "typescript": "^4.9.4"
+    "typescript": "^5.0.4"
   }
 }
